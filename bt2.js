@@ -1,9 +1,8 @@
-// solution_ex3.js
-
-const BASE_PRICE_SIZE_S = 35000;
-const EXTRA_PRICE_SIZE_M = 6000;
-const EXTRA_PRICE_SIZE_L = 10000;
-const TOPPING_PRICE = 8000;
+// Đổi tên hằng số sang chuẩn camelCase theo đúng rubric
+const basePriceSizeS = 35000;
+const extraPriceSizeM = 6000;
+const extraPriceSizeL = 10000;
+const toppingPrice = 8000;
 
 const orderSizes = "MLXSM";
 const toppingCount = 2;
@@ -22,13 +21,13 @@ for (let orderIndex = 0; orderIndex < orderSizes.length; orderIndex++) {
     // Tối ưu hóa Clean Code: Dùng switch-case để phân nhánh xử lý size rõ ràng
     switch (currentDrinkSize) {
         case "S":
-            totalDrinkAmount += BASE_PRICE_SIZE_S;
+            totalDrinkAmount += basePriceSizeS;
             break;
         case "M":
-            totalDrinkAmount += (BASE_PRICE_SIZE_S + EXTRA_PRICE_SIZE_M);
+            totalDrinkAmount += (basePriceSizeS + extraPriceSizeM);
             break;
         case "L":
-            totalDrinkAmount += (BASE_PRICE_SIZE_S + EXTRA_PRICE_SIZE_L);
+            totalDrinkAmount += (basePriceSizeS + extraPriceSizeL);
             break;
         default:
             console.warn(`CẢNH BÁO: Ký tự size '${currentDrinkSize}' không hợp lệ!`);
@@ -38,14 +37,16 @@ for (let orderIndex = 0; orderIndex < orderSizes.length; orderIndex++) {
 
 // Tối ưu logic giảm giá bằng toán tử ba ngôi
 const discountRate = isGoldMember === true ? 0.9 : 1.0;
-const finalBillAmount = (totalDrinkAmount + (toppingCount * TOPPING_PRICE)) * discountRate;
+const finalBillAmount = (totalDrinkAmount + (toppingCount * toppingPrice)) * discountRate;
 
 console.log("========================================");
 console.log("       HOÁ ĐƠN HIGHLANDS COFFEE");
 console.log("========================================");
 console.log(`Chuỗi order xử lý : ${orderSizes}`);
 console.log(`Tổng tiền đồ uống : ${totalDrinkAmount} VNĐ`);
-console.log(`Tiền topping      : ${toppingCount * TOPPING_PRICE} VNĐ`);
+console.log(`Tiền topping      : ${toppingCount * toppingPrice} VNĐ`);
 console.log("----------------------------------------");
 console.log(`TỔNG TIỀN HÓA ĐƠN : ${finalBillAmount} VNĐ`);
 console.log("========================================");
+
+/*
