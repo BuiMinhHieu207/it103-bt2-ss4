@@ -1,4 +1,4 @@
-# Phân tích lỗi và Đối soát kết quả 
+
 
 ## 1. Xác định vị trí và bản chất lỗi
 - **Vị trí lỗi:** Trong vòng lặp `for` dùng để duyệt chuỗi `orderSizes`, tại khối điều kiện kiểm tra ký tự món bị hủy (ký tự `"X"`).
